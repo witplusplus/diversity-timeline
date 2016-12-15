@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+
+		<link rel="stylesheet" href="css/font.css">
+		<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+		<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+		<script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+		<script type="text/javascript" src="js/types.js"></script>
+		<script type="text/javascript" src="js/events.js"></script>
+
+		<title>Wentworth Diversity Timeline</title>
+
+		<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+	</head>
+	<body>
+		<header>
+			<h1>
+				Wentworth Diversity Timeline<br />
+			</h1>
+
+		</header>
+
+		<section id="cd-timeline" class="cd-container">
+			<script>
+				function escapeHtml(str) {
+					var div = document.createElement('div');
+					div.appendChild(document.createTextNode(str));
+					return div.innerHTML;
+				}
+
+				function addEvent(item, index) {
+					document.write('<div class="cd-timeline-block">');
+
+					document.write('<div class="cd-timeline-img" style="background: ' + escapeHtml(types[item['type']]['bg']) + '">');
+					document.write('<img src="img/' + escapeHtml(types[item['type']]['pic']) + '" />');
+					document.write('</div>');
+
+					document.write('<div class="cd-timeline-content">');
+
+					if (item['title'] !== null) {
+						document.write('<h2>');
+						document.write(escapeHtml(item['title']));
+						if (item['history']) {
+							document.write('<span style="vertical-align: super">*</span>');
+						}
+						document.write('</h2>');
+					}
+
+					document.write('<p>' + escapeHtml(item['content']) + '</p>');
+
+					if (item['link'] !== null) {
+						document.write('<a href="' + escapeHtml( item['link'] ) + '" target="_blank" class="cd-read-more">Read more</a>');
+					}
+
+					document.write('<span class="cd-date">' + escapeHtml( item['date'] ) + '</span>');
+
+					document.write('</div>');
+
+					document.write('</div>');
+				}
+
+				events.forEach(addEvent);
+			</script>
+
+		</section> <!-- cd-timeline -->
+
+		<footer>
+			<span style="vertical-align: super">*</span><span style="font-style: italic">Events included for historical context.</span>
+		</footer>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/main.js"></script> <!-- Resource jQuery -->
+	</body>
+</html>
