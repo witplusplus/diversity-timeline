@@ -1,5 +1,14 @@
 var events = [
-
+	
+	{
+		'date':'2016',
+		'title':'Alex becomes a hacker',
+		'content':'DYI page.',
+		'link':'https://www.wit.edu/student-life/student-services/international-student-services',
+		'type':'race',
+		'history':false,
+	},
+	
 	{
 		'date':'2007',
 		'title':'Intercultural Center',
