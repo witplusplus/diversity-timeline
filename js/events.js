@@ -1,7 +1,7 @@
-var events = [
+﻿var events = [
 	
 	{
-		'date':'2016',
+		'date':'2020',
 		'title':'Alex becomes a hacker',
 		'content':'DYI page.',
 		'link':'https://www.wit.edu/student-life/student-services/international-student-services',
